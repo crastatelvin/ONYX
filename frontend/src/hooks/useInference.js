@@ -59,6 +59,10 @@ export default function useInference() {
   const runInference = useCallback(() => {
     const task = getTask(taskId);
     if (!task || modelStatus !== "ready" || !input.trim()) return;
+    if (task.pipeline === "question-answering" && !question.trim()) {
+      setError("Please enter a question for Q&A.");
+      return;
+    }
     setError("");
     setResult(null);
     setInferenceStatus("running");

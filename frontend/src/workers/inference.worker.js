@@ -51,7 +51,8 @@ self.onmessage = async (event) => {
           result = await currentPipeline(input, { max_length: 150, min_length: 30, do_sample: false });
           break;
         case "question-answering":
-          result = await currentPipeline({ question: options?.question || "", context: input });
+          // Transformers.js QA pipeline expects (question, context), not an object payload.
+          result = await currentPipeline(options?.question || "", input);
           break;
         default:
           result = await currentPipeline(input);
