@@ -10,6 +10,7 @@
   --green: #39ff14;
   --amber: #ffbe0b;
   --red: #ff4757;
+  --panel-bright: #182034;
 }
 
 * {
@@ -21,6 +22,7 @@ body {
   background: radial-gradient(circle at 10% 0%, #1f273d 0%, var(--space) 40%);
   color: var(--text);
   font-family: "Rajdhani", sans-serif;
+  overflow-x: hidden;
 }
 
 .onyx-root {
@@ -33,6 +35,7 @@ body {
   border: 1px solid rgba(255, 107, 53, 0.2);
   border-radius: 8px;
   padding: 0.9rem;
+  backdrop-filter: blur(3px);
 }
 
 .header {
@@ -53,6 +56,201 @@ body {
   font-family: "Courier Prime", monospace;
 }
 
+.section-title {
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  color: rgba(255, 107, 53, 0.6);
+  font-size: 0.65rem;
+}
+
+.privacy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(57, 255, 20, 0.35);
+  border-radius: 999px;
+  color: #39ff14;
+  font-size: 0.72rem;
+  background: rgba(57, 255, 20, 0.08);
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #39ff14;
+  box-shadow: 0 0 8px #39ff14;
+}
+
+.status-grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.status-card {
+  text-align: center;
+  padding: 0.6rem;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 0.3rem;
+}
+
+.status-value {
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.status-label {
+  font-size: 0.52rem;
+  color: rgba(232, 234, 237, 0.45);
+  letter-spacing: 1px;
+}
+
+.task-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.task-btn {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  background: transparent;
+  color: #dbe4ea;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+
+.task-btn.active {
+  border-color: var(--task-color);
+  background: color-mix(in srgb, var(--task-color) 14%, transparent);
+}
+
+.task-title {
+  font-size: 0.66rem;
+}
+
+.task-sub {
+  font-size: 0.55rem;
+  opacity: 0.65;
+}
+
+.loader-head {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.loader-model {
+  opacity: 0.78;
+  font-size: 0.72rem;
+  margin-bottom: 0.5rem;
+}
+
+.loader-status {
+  font-size: 0.75rem;
+  margin-bottom: 0.45rem;
+}
+
+.loader-bar {
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b35, #39ff14);
+}
+
+.loader-msg {
+  margin-top: 0.3rem;
+  font-size: 0.68rem;
+  opacity: 0.75;
+}
+
+.primary-btn {
+  margin-top: 0.55rem;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem;
+  background: linear-gradient(135deg, #ff6b35, #f54f7f);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.perf {
+  font-size: 0.74rem;
+  line-height: 1.8;
+}
+
+.input-textarea,
+.input-field {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  color: #e8eaed;
+  border: 1px solid rgba(100, 223, 223, 0.35);
+  border-radius: 6px;
+  padding: 0.6rem;
+  outline: none;
+}
+
+.input-field {
+  margin-top: 0.5rem;
+  border-color: rgba(255, 190, 11, 0.35);
+}
+
+.ghost-btn {
+  border: 1px solid rgba(100, 223, 223, 0.5);
+  background: transparent;
+  color: #64dfdf;
+  border-radius: 6px;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+.run-btn {
+  margin-left: auto;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 0.9rem;
+  background: linear-gradient(90deg, #64dfdf, #a29bfe);
+  color: #111;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.run-btn:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: #7b8790;
+  cursor: not-allowed;
+}
+
+.terminal {
+  margin: 0;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 0.8rem;
+  min-height: 200px;
+  max-height: 380px;
+  overflow: auto;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
 textarea,
 input,
 button {
@@ -62,5 +260,9 @@ button {
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .status-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
