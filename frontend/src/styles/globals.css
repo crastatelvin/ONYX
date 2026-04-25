@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap");
+
+:root {
+  --space: #050608;
+  --titanium: #1a1f2e;
+  --panel: #101522;
+  --text: #e8eaed;
+  --orange: #ff6b35;
+  --ice: #64dfdf;
+  --green: #39ff14;
+  --amber: #ffbe0b;
+  --red: #ff4757;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 10% 0%, #1f273d 0%, var(--space) 40%);
+  color: var(--text);
+  font-family: "Rajdhani", sans-serif;
+}
+
+.onyx-root {
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent), var(--panel);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: 8px;
+  padding: 0.9rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1rem;
+}
+
+.mono {
+  font-family: "Courier Prime", monospace;
+}
+
+textarea,
+input,
+button {
+  font: inherit;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
