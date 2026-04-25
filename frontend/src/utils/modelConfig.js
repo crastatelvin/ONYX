@@ -50,6 +50,18 @@ export const TASKS = [
       "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel.",
     questionInput: "Who designed the Eiffel Tower?",
     placeholder: "Enter context passage..."
+  },
+  {
+    id: "translation",
+    label: "Translation",
+    icon: "GLOBE",
+    color: "#a29bfe",
+    description: "Translate text from English to French",
+    model: "Xenova/opus-mt-en-fr",
+    pipeline: "translation",
+    modelSize: "~298MB",
+    exampleInput: "Artificial intelligence is changing the way we live and work.",
+    placeholder: "Enter English text to translate..."
   }
 ];
 

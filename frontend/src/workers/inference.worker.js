@@ -54,6 +54,9 @@ self.onmessage = async (event) => {
           // Transformers.js QA pipeline expects (question, context), not an object payload.
           result = await currentPipeline(options?.question || "", input);
           break;
+        case "translation":
+          result = await currentPipeline(input);
+          break;
         default:
           result = await currentPipeline(input);
       }
