@@ -25,7 +25,25 @@ cd frontend
 npm run build
 ```
 
+## Deploy
+
+### Vercel
+
+```bash
+cd frontend
+vercel --prod
+```
+
+`frontend/vercel.json` is included with SPA rewrites and required COEP/COOP headers.
+
+### GitHub Pages
+
+- A workflow is included at `.github/workflows/deploy-pages.yml`.
+- On push to `main`, it builds `frontend` and deploys `frontend/dist`.
+- In repository settings, set Pages source to **GitHub Actions**.
+
 ## Notes
 
 - First model load downloads from HuggingFace and is cached by the browser.
 - WebGPU is used when available; WASM fallback is supported.
+- PWA support is enabled with `manifest.webmanifest` and `sw.js`.
